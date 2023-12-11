@@ -42,13 +42,60 @@
     </div>
   </header>
 
+  <!-- bagian form input data -->
+  <div id="layouting" class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/[.9] hidden">
+    <form action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
+      <l id="close" class="text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
+      <div class="border-gray-500 p-7 cursor-pointer">
+        <h3 class="mt-2text-center text-2xl text-bold pb-4">masukan data berikut</h3>
+        <div>
+          <label for="harga">harga</label>
+          <input class="w-full p-2  rounded-lg my-2 " type="number" id="harga" placeholder="harga">
+        </div>
+        <div>
+          <label for="judul">judul</label>
+          <input class="w-full p-2  rounded-lg my-2 " type="text" id="judul" placeholder="judul">
+        </div>
+        <div>
+          <label for="kategori">kategori</label>
+          <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
+            <option value="kitab">kitab</option>
+            <option value="nadom">nadom</option>
+            <option value="diktat">diktat</option>
+          </select>
+        </div>
+        <div>
+          <label for="stok">stok</label>
+          <input class="w-full p-2  rounded-lg my-2 " type="number" id="stok" placeholder="stok">
+        </div>
+        <div>
+          <label for="kelas">kelas</label>
+          <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
+            <option value="d1">d1</option>
+            <option value="d2">nadom</option>
+            <option value="kelas1">diktat</option>
+            <option value="kelas2">diktat</option>
+            <option value="kelas3">diktat</option>
+          </select>
+        </div>
+        
+        <button id="simpan" class="bg-teal-600 py-2 text-white capitalize rounded-md mt-6 w-full" type="button">simpan</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- bagian utama halaman -->
   <main>
     <div class="w-[95%] mx-auto capitalize">
       <div class="tabel p-4">
-        <div class="flex">
-          <input type="search" placeholder="cari..." class="border-2 w-[500px] p-1 px-2">
-          <button class="bg-gray-300 px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
+        <div class="flex justify-between">
+          <div class="flex gap-2">
+            <input type="search" placeholder="cari..." class="border-2 w-[110%] p-1 px-2">
+            <button class="bg-gray-400 text-teal-200 px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
+          </div>
+          <button id="tambah-data" class="bg-gray-500 px-3 capitalize rounded-md text-white ">tambah data</button>
         </div>
+        
         <!-- bagian kitab berdasarkan kelas -->
         <div class="flex flex-wrap gap-6">
           <figure class="mt-4 "> 
@@ -206,23 +253,9 @@
 <footer>
 
 </footer>
+
+<script type="module" src="../interaktif.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
