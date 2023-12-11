@@ -1,0 +1,39 @@
+*{
+  --warna-garis: 1px solid #4d4d4d;
+}
+
+.header-main {
+  height: 100vh;
+}
+
+.tabel th,
+.tabel td{
+  padding: 5px;
+  border-right: var(--warna-garis);
+  border-bottom: var(--warna-garis);
+}
+.tabel tr:first-child th,
+.tabel td:first-child{
+  border-left: var(--warna-garis);
+  border-top: var(--warna-garis);
+}
+
+header .link a{
+  /* background-color: blueviolet; */
+  display: block;
+  padding: 7px 0;
+  border: 0;
+  transition: .333s;
+}
+header .link a:hover{
+  border-bottom: 2px solid white;
+}
+
+header .link .link-aktif{
+  border-bottom: 2px solid white;
+}
+
+.tabel th{
+  background-color: teal;
+  color: white;
+}

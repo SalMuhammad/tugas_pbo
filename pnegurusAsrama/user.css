@@ -1,0 +1,9 @@
+figure .tabel tr:last-child td:nth-child(1){
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
+  /* background-color: olivedrab; */
+}
+figure .tabel tr:last-child td:nth-child(2){
+  border-bottom: 0;
+}

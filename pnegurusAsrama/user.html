@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="user.css">
+  <title></title>
+</head>
+<body>
+  
+  <div class="max-w-sm shadow-sm mx-auto relative" style="height: 100vh;">
+    <nav class="bg-slate-500">
+      <div class="mx-auto w-[95%]">
+        <div class="flex text-sm w-2 text-white justify-between">
+          <a href="../pengelolaKItab/atawakal.html" class="px-3">admin</a>
+          <a href="../pnegurusAsrama/user.html" class="px-3 bg-green-600">user</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="p-2 bg-green-600 text-white">
+      <header class="p-1 ">
+        <a href="">bagian nav bar</a>
+      </header>
+    </div>
+
+    <!-- yang di tampilkan -->
+    <div id="yg-di-tampilkan" class="p-2">
+      <!-- bagian pesanan dari asrama -->
+      <div id="pesan-dari-asrama" class="">
+        <div class="my-4">
+          <details>
+            <summary>spa</summary>
+            <div class="flex flex-wrap gap-2 justify-end">
+              <div class="flex justify-between w-[41%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
+                <input type="checkbox">
+                <span class="p-1">kitab</span>
+                <span class="p-1">12000 </span>
+                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
+              </div>
+              <div class="flex justify-between w-[45%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
+                <input type="checkbox">
+                <span class="p-1">kitab</span>
+                <span class="p-1">12000 </span>
+                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
+              </div>
+              <div class="flex justify-between w-[45%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
+                <input type="checkbox">
+                <span class="p-1">kitab</span>
+                <span class="p-1">12000 </span>
+                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
+              </div>
+            </div>
+          </details>
+        </div>
+        <button id="selanjutnya" class=" fixed bottom-28 left-[50%] -translate-x-[50%] bg-green-600 text-white shadow-xl px-4 py-1 rounded-xl " type="submit">selanjutnya</button>
+
+        <!-- bagian rincia pesanan -->
+        <div id="rincian-pesanan" class=" absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-tr from-cyan-700 to-blue-300 z-10 hidden">
+          <div class="p-2">
+            <i class="fa fa-arrow-left cursor-pointer" aria-hidden="true"></i>
+            <br>
+            <figure class=" w-[80%] mx-auto capitalize caret-purple-500">
+              <figcaption class="text-center">daftar pesanan anda</figcaption>
+              <table class="tabel w-full">
+                <tr>
+                  <th>kitab</th>
+                  <th>harga</th>
+                  <th>jumlah</th>
+                  <th>total</th>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </figure>
+            <button class="fixed bottom-36 left-[50%] -translate-x-[50%] bg-teal-600 text-white shadow-xl px-4 py-1 rounded-xl border-2 border-gray-400" type="submit">pesan sekarang</button>
+          </div>
+        </div>
+
+        <!-- bagian akun -->
+      </div>
+      
+      <!-- bagian  -->
+    </div>
+    
+    
+    <footer class="p-2 absolute text-3xl bottom-0 left-0 right-0 border-teal-500 border-t-2 text-sky-600">
+      <nav class="flex justify-between">
+        <i class="cursor-pointer transition-all duration-500 fa fa-home" aria-hidden="true"></i> 
+        <i class="cursor-pointer transition-all duration-500 fa fa-paper-plane text-red-600" aria-hidden="true"></i>
+        <i class="cursor-pointer transition-all duration-500 fa fa-handshake-o" aria-hidden="true"></i>
+        <i class="cursor-pointer transition-all duration-500 fa fa-user" aria-hidden="true"></i>
+      </nav>
+    </footer>
+  </div>
+  <script type="module" src="../interaktif.js"></script>
+</body>
+</html>
