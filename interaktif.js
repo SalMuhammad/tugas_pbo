@@ -32,14 +32,31 @@ Array.from($all('footer nav i')).forEach(i => {
 ========================   HALAMAN KELOLA KITAB   ======================
 ----------------------------------------------------------------------*/
 
-$('#tambah-data').addEventListener('click', function() {
-  $('#layouting').classList.remove('hidden')
-})
-$('#close').addEventListener('click', function() {
-  $('#layouting').classList.add('hidden')
-})
+if($('#tambah-data')) {
+  $('#tambah-data').addEventListener('click', function() {
+    $('#layouting').classList.remove('hidden')
+  })
+  $('#close').addEventListener('click', function() {
+    $('#layouting').classList.add('hidden')
+  })
+}
 
 
+// class BankAccount {
+//   #balance = 0; // Private field
+
+//   deposit(amount) {
+//     this.#balance += amount;
+//   }
+
+//   getBalance() {
+//     return this.#balance;
+//   }
+// }
+
+// const account = new BankAccount();
+// account.deposit(100);
+// console.log(account.getBalance());
 
 
 

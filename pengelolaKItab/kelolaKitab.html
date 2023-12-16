@@ -45,7 +45,7 @@
   <!-- bagian form input data -->
   <div id="layouting" class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/[.9] hidden">
     <form action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
-      <l id="close" class="text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
+      <l id="close" class="cursor-pointer text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
       <div class="border-gray-500 p-7 cursor-pointer">
         <h3 class="mt-2text-center text-2xl text-bold pb-4">masukan data berikut</h3>
         <div>
@@ -72,10 +72,10 @@
           <label for="kelas">kelas</label>
           <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
             <option value="d1">d1</option>
-            <option value="d2">nadom</option>
-            <option value="kelas1">diktat</option>
-            <option value="kelas2">diktat</option>
-            <option value="kelas3">diktat</option>
+            <option value="d2">d2</option>
+            <option value="kelas1">kelas 1</option>
+            <option value="kelas2">kelas 2</option>
+            <option value="kelas3">kelas 3</option>
           </select>
         </div>
         
@@ -85,13 +85,14 @@
   </div>
 
   <!-- bagian utama halaman -->
-  <main>
+  <main>  
     <div class="w-[95%] mx-auto capitalize">
       <div class="tabel p-4">
         <div class="flex justify-between">
-          <div class="flex gap-2">
-            <input type="search" placeholder="cari..." class="border-2 w-[110%] p-1 px-2">
-            <button class="bg-gray-400 text-teal-200 px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <div class="flex">
+            <!-- input pencarian -->
+            <input type="search" placeholder="cari..." class="border-2 w-[50vw] p-1 px-2">
+            <button class="bg-gray-400 text-white px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
           </div>
           <button id="tambah-data" class="bg-gray-500 px-3 capitalize rounded-md text-white ">tambah data</button>
         </div>
@@ -213,7 +214,7 @@
               </tr>
             </table>
   
-          </figure>
+          </figure> 
           <!-- bagian nadom -->
           <figure class="mt-4">
             <caption>data nadom</caption>
