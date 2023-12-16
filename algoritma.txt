@@ -1,0 +1,6 @@
+1. data di simpan
+2. data di filter berdasarkan kitab, nadom, diktat
+3. ambil data pesanan user.
+4. tampilkan di halaman selanjutnya
+5. setelah user klik beli, data yang di pesankan tampilkan di halaman pesanan
+   - bentuk data pesanan
