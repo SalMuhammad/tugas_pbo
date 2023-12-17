@@ -19,42 +19,42 @@
   </nav>
 
   <div class="header-main">
-  <header style="background-color: rgba(0, 30, 46);" class="text-white capitalize">
-    <div class="w-[95%] mx-auto">
-      <div class="flex justify-between items-center p-3">
-        <div class="flex items-center">
-          <img src="../img/logo.jpg" class="mr-4" width="60px">
-          <div>
-            <h4 class="font-bold">ponpes cipasung</h4>
-          <span>Attawakal toko</span>
+    <header style="background-color: rgba(0, 30, 46);" class="text-white capitalize">
+      <div class="w-[95%] mx-auto">
+        <div class="flex justify-between items-center p-3">
+          <div class="flex items-center">
+            <img src="../img/logo.jpg" class="mr-4" width="60px">
+            <div>
+              <h4 class="font-bold">ponpes cipasung</h4>
+            <span>Attawakal toko</span>
+            </div>
           </div>
+          <nav class="link">
+            <ul class="text-lg flex gap-6">
+              <a href="atawakal.html">pesanan</a>
+              <a href="kelolaKitab.html" class="link-aktif">kelola kitab</a>
+              <a href="kelola-stok.html">kelola stok</a>
+              <a href="history.html"> history</a>
+            </ul>
+          </nav>
+          <span class="pengaturan"><i class="fa fa-th-list" aria-hidden="true"></i></span>
         </div>
-        <nav class="link">
-          <ul class="text-lg flex gap-6">
-            <a href="atawakal.html">pesanan</a>
-            <a href="kelolaKitab.html" class="link-aktif">kelola kitab</a>
-            <a href="kelola-stok.html">kelola stok</a>
-            <a href="history.html"> history</a>
-          </ul>
-        </nav>
-        <span class="pengaturan"><i class="fa fa-th-list" aria-hidden="true"></i></span>
       </div>
-    </div>
-  </header>
+    </header>
 
   <!-- bagian form input data -->
   <div id="layouting" class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/[.9] hidden">
-    <form action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
+    <form id="formLayouting" action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
       <l id="close" class="cursor-pointer text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
       <div class="border-gray-500 p-7 cursor-pointer">
         <h3 class="mt-2text-center text-2xl text-bold pb-4">masukan data berikut</h3>
         <div>
-          <label for="harga">harga</label>
-          <input class="w-full p-2  rounded-lg my-2 " type="number" id="harga" placeholder="harga">
+          <label for="judul">judul</label>
+          <input class="w-full p-2  rounded-lg my-2 " type="text" id="judul" placeholder="judul" required>
         </div>
         <div>
-          <label for="judul">judul</label>
-          <input class="w-full p-2  rounded-lg my-2 " type="text" id="judul" placeholder="judul">
+          <label for="harga">harga</label>
+          <input class="w-full p-2  rounded-lg my-2 " type="number" id="harga" placeholder="harga" required>
         </div>
         <div>
           <label for="kategori">kategori</label>
@@ -68,22 +68,10 @@
           <label for="stok">stok</label>
           <input class="w-full p-2  rounded-lg my-2 " type="number" id="stok" placeholder="stok">
         </div>
-        <div>
-          <label for="kelas">kelas</label>
-          <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
-            <option value="d1">d1</option>
-            <option value="d2">d2</option>
-            <option value="kelas1">kelas 1</option>
-            <option value="kelas2">kelas 2</option>
-            <option value="kelas3">kelas 3</option>
-          </select>
-        </div>
-        
-        <button id="simpan" class="bg-teal-600 py-2 text-white capitalize rounded-md mt-6 w-full" type="button">simpan</button>
+        <button id="simpan" class="bg-teal-600 py-2 text-white capitalize rounded-md mt-6 w-full" type="submit">simpan</button>
       </div>
     </form>
   </div>
-
   <!-- bagian utama halaman -->
   <main>  
     <div class="w-[95%] mx-auto capitalize">
@@ -99,106 +87,9 @@
         
         <!-- bagian kitab berdasarkan kelas -->
         <div class="flex flex-wrap gap-6">
-          <figure class="mt-4 "> 
+          <figure id="tabel-kelas" class="mt-4 ">
             <caption>data kitab kelas</caption>
-            <table class="tabel my-2">
-              <thead>
-                <tr>
-                  <th colspan="2">d1</th>
-                  <th colspan="2">d2</th>
-                  <th colspan="2">kls1</th>
-                  <th colspan="2">kls2</th>
-                  <th colspan="2">kls3</th>
-                  <th colspan="2">kls3</th>
-                </tr>
-                <tr>
-                  <td>lk</td>
-                  <td>pr</td>
-                  <td>lk</td>
-                  <td>pr</td>
-                  <td>lk</td>
-                  <td>pr</td>
-                  <td>lk</td>
-                  <td>pr</td>
-                  <td>lk</td>
-                  <td>pr</td>
-                  <td>lk</td>
-                  <td>pr</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-              </tbody>
-            </table>
+            <div></div>
           </figure>
           <!-- bagian kitab -->
           <figure class="mt-4">
@@ -206,14 +97,10 @@
             <table class="my-2">
               <tr>
                 <th>kitab</th>
-                <th>harga</th>
+                <th colspan="2">harga</th>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-            </table>
-  
+              <tbody id="tbody-kitab"></tbody>
+            </table>  
           </figure> 
           <!-- bagian nadom -->
           <figure class="mt-4">
@@ -221,12 +108,9 @@
             <table class="my-2">
               <tr>
                 <th>nadom</th>
-                <th>harga</th>
+                <th colspan="2">harga</th>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
+             <tbody id="tbody-nadom"></tbody>
             </table>
   
           </figure> 
@@ -236,12 +120,9 @@
             <table class="mt-2">
               <tr>
                 <th>diktat</th>
-                <th>harga</th>
+                <th colspan="2">harga</th>
               </tr>
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
+              <tbody id="tbody-diktat"></tbody>
             </table>
   
           </figure>
@@ -256,6 +137,8 @@
 </footer>
 
 <script type="module" src="../interaktif.js"></script>
+<script type="module" src="database.js"></script>
+<script type="module" src="cetakData.js"></script>
 </body>
 </html>
 
