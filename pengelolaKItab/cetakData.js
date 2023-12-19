@@ -30,7 +30,6 @@ $('figure#tabel-kelas div').innerHTML = `
                 <div class="">pr</div>
               </div>
             </div>
- 
             <div class="flex justify-around text-sm">
               <div>
                 ${kls.lk.map(l => `<span class="block">${l.judul}</span>`).join('')}
@@ -39,12 +38,12 @@ $('figure#tabel-kelas div').innerHTML = `
                 ${kls.prm.map(l => `<span class="block">${l.judul}</span>`).join('')}
               </div>
             </div>
-          </div>`;
+          </div>
+        `
       }).join('')}
     </div>
   </div>
-`;
-
+`
 
 // menampilkan data kitab ke tabel
 cetakTabel($('#tbody-kitab'), 'kitab', data)
@@ -55,4 +54,26 @@ cetakTabel($('#tbody-nadom'), 'nadom', data)
 // menampilkan data diktat ke tabel
 cetakTabel($('#tbody-diktat'), 'diktat', data)
 
+$all('table .fa-ellipsis-v').forEach(el => {
+  el.addEventListener('click', e => {
+    $('.layer-pilihan').classList.remove('hidden')
+    $('#box').classList.add(`left-[${e.pageX}px]`)
+    $('#box').classList.add(`top-[${e.pageY}px]`)
+    // $('.pilihan-kelas').innerHTML = e.pageX
+    $('.pilihan-kelas').innerHTML = `
+      <ul class="hidden bg-white absolute z-50 group-hover:py-2 group-hover:border-[1px] group-hover:border-teal-800/30 group-hover:shadow-md group-hover:rounded-sm group-hover:-top-7 group-hover:-right-[50px] group-hover:inline-block">
+        ${kelas.map(kl => {
+          return `<li class="hover:bg-gray-300 px-2">${kl.kls}</li>`
+        }).join('')}
+      </ul>
+    `
+  })
+})
+
+$('#form-tambah-kitab-kelas').addEventListener('click', e => {
+  if(e.target.classList.contains('layer-pilihan')) {
+    e.target.classList.add('hidden')
+  }
+  // $('.layer-pilihan').classList.add('hidden')
+})
 

@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../style.css">
   <title>pengelola kitab</title>
 </head>
+
 <body class="h-[1000px]">
   <nav class="bg-slate-500 capitalize">
     <div class="mx-auto w-[95%]">
@@ -18,7 +19,19 @@
     </div>
   </nav>
 
-  <div class="header-main">
+  <section id="form-tambah-kitab-kelas">
+    <div class="layer-pilihan absolute z-0 top-0 right-0 bottom-0 left-8 hidden">
+      <div id="box" class="absolute py-1 bg-white z-20 shadow-sm border-[1px] rounded border-gray-300">
+        <a class="hover:bg-gray-200 block px-2 cursor-pointer group">tambahkan ke > 
+          <div class="pilihan-kelas relative"></div>
+        </a>
+        <a class="hover:bg-gray-100 block px-2 cursor-pointer">edit</a>
+        <a class="hover:bg-gray-100 block px-2 cursor-pointer">hapus</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="header-main">
     <header style="background-color: rgba(0, 30, 46);" class="text-white capitalize">
       <div class="w-[95%] mx-auto">
         <div class="flex justify-between items-center p-3">
@@ -32,9 +45,9 @@
           <nav class="link">
             <ul class="text-lg flex gap-6">
               <a href="atawakal.html">pesanan</a>
-              <a href="kelolaKitab.html" class="link-aktif">kelola kitab</a>
+              <a href="kelolaKitab.KThtml" class="link-aktif">kelola kitab</a>
               <a href="kelola-stok.html">kelola stok</a>
-              <a href="history.html"> history</a>
+              <a href="history.html">KT history</a>
             </ul>
           </nav>
           <span class="pengaturan"><i class="fa fa-th-list" aria-hidden="true"></i></span>
@@ -42,99 +55,98 @@
       </div>
     </header>
 
-  <!-- bagian form input data -->
-  <div id="layouting" class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/[.9] hidden">
-    <form id="formLayouting" action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
-      <l id="close" class="cursor-pointer text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
-      <div class="border-gray-500 p-7 cursor-pointer">
-        <h3 class="mt-2text-center text-2xl text-bold pb-4">masukan data berikut</h3>
-        <div>
-          <label for="judul">judul</label>
-          <input class="w-full p-2  rounded-lg my-2 " type="text" id="judul" placeholder="judul" required>
-        </div>
-        <div>
-          <label for="harga">harga</label>
-          <input class="w-full p-2  rounded-lg my-2 " type="number" id="harga" placeholder="harga" required>
-        </div>
-        <div>
-          <label for="kategori">kategori</label>
-          <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
-            <option value="kitab">kitab</option>
-            <option value="nadom">nadom</option>
-            <option value="diktat">diktat</option>
-          </select>
-        </div>
-        <div>
-          <label for="stok">stok</label>
-          <input class="w-full p-2  rounded-lg my-2 " type="number" id="stok" placeholder="stok">
-        </div>
-        <button id="simpan" class="bg-teal-600 py-2 text-white capitalize rounded-md mt-6 w-full" type="submit">simpan</button>
-      </div>
-    </form>
-  </div>
-  <!-- bagian utama halaman -->
-  <main>  
-    <div class="w-[95%] mx-auto capitalize">
-      <div class="tabel p-4">
-        <div class="flex justify-between">
-          <div class="flex">
-            <!-- input pencarian -->
-            <input type="search" placeholder="cari..." class="border-2 w-[50vw] p-1 px-2">
-            <button class="bg-gray-400 text-white px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
+    <!-- bagian form input data -->
+    <div id="layouting" class="fixed top-0 right-0 bottom-0 left-0 bg-zinc-900/[.9] hidden">
+      <form id="formLayouting" action="" class="max-w-sm mt-16 mx-auto border-[1px] rounded-lg bg-white/[.9] relative capitalize">
+        <l id="close" class="cursor-pointer text-red-400 font-bold text-lg absolute top-0 right-2 hover:text-red-600 block p-2">x</l>
+        <div class="border-gray-500 p-7 cursor-pointer">
+          <h3 class="mt-2text-center text-2xl text-bold pb-4">masukan data berikut</h3>
+          <div>
+            <label for="judul">judul</label>
+            <input class="w-full p-2 rounded-lg my-2 " type="text" id="judul" placeholder="judul" required>
           </div>
-          <button id="tambah-data" class="bg-gray-500 px-3 capitalize rounded-md text-white ">tambah data</button>
+          <div>
+            <label for="harga">harga</label>
+            <input class="w-full p-2  rounded-lg my-2 " type="number" id="harga" placeholder="harga" required>
+          </div>
+          <div>
+            <label for="kategori">kategori</label>
+            <select name="" id="kategori" class="block w-full p-2  rounded-lg my-2">
+              <option value="kitab">kitab</option>
+              <option value="nadom">nadom</option>
+              <option value="diktat">diktat</option>
+            </select>
+          </div>
+          <div>
+            <label for="stok">stok</label>
+            <input class="w-full p-2  rounded-lg my-2 " type="number" id="stok" placeholder="stok">
+          </div>
+          <button id="simpan" class="bg-teal-600 py-2 text-white capitalize rounded-md mt-6 w-full" type="submit">simpan</button>
         </div>
-        
-        <!-- bagian kitab berdasarkan kelas -->
-        <div class="flex flex-wrap gap-6">
-          <figure id="tabel-kelas" class="mt-4 ">
-            <caption>data kitab kelas</caption>
-            <div></div>
-          </figure>
-          <!-- bagian kitab -->
-          <figure class="mt-4">
-            <caption>data kitab</caption>
-            <table class="my-2">
-              <tr>
-                <th>kitab</th>
-                <th colspan="2">harga</th>
-              </tr>
-              <tbody id="tbody-kitab"></tbody>
-            </table>  
-          </figure> 
-          <!-- bagian nadom -->
-          <figure class="mt-4">
-            <caption>data nadom</caption>
-            <table class="my-2">
-              <tr>
-                <th>nadom</th>
-                <th colspan="2">harga</th>
-              </tr>
-             <tbody id="tbody-nadom"></tbody>
-            </table>
-  
-          </figure> 
-          <!-- bagian diktat -->
-          <figure class="mt-4">
-            <caption>data diktat</caption>
-            <table class="mt-2">
-              <tr>
-                <th>diktat</th>
-                <th colspan="2">harga</th>
-              </tr>
-              <tbody id="tbody-diktat"></tbody>
-            </table>
-  
-          </figure>
+      </form>
+    </div>
+    <!-- bagian utama halaman -->
+    <main>  
+      <div class="w-[95%] mx-auto capitalize">
+        <div class="tabel p-4">
+          <div class="flex justify-between">
+            <div class="flex">
+              <!-- input pencarian -->
+              <input type="search" placeholder="cari..." class="border-2 w-[50vw] p-1 px-2">
+              <button class="bg-gray-400 text-white px-3"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <button id="tambah-data" class="bg-gray-500 px-3 capitalize rounded-md text-white ">tambah data</button>
+          </div>
+          
+          <!-- bagian kitab berdasarkan kelas -->
+          <div class="flex flex-wrap gap-6">
+            <figure id="tabel-kelas" class="mt-4 ">
+              <caption>data kitab kelas</caption>
+              <div></div>
+            </figure>
+            <!-- bagian kitab -->
+            <figure class="mt-4">
+              <caption>data kitab</caption>
+              <table class="my-2">
+                <tr>
+                  <th>kitab</th>
+                  <th colspan="2">harga</th>
+                </tr>
+                <tbody id="tbody-kitab"></tbody>
+              </table>  
+            </figure> 
+            <!-- bagian nadom -->
+            <figure class="mt-4">
+              <caption>data nadom</caption>
+              <table class="my-2">
+                <tr>
+                  <th>nadom</th>
+                  <th colspan="2">harga</th>
+                </tr>
+              <tbody id="tbody-nadom"></tbody>
+              </table>
+    
+            </figure> 
+            <!-- bagian diktat -->
+            <figure class="mt-4">
+              <caption>data diktat</caption>
+              <table class="mt-2">
+                <tr>
+                  <th>diktat</th>
+                  <th colspan="2">harga</th>
+                </tr>
+                <tbody id="tbody-diktat"></tbody>
+              </table>
+    
+            </figure>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-</div>
+    </main>
+  </section>
 
-<footer>
-
-</footer>
+  <footer>
+  </footer>
 
 <script type="module" src="../interaktif.js"></script>
 <script type="module" src="database.js"></script>

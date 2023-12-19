@@ -9,8 +9,6 @@ import {
 const storedData = localStorage.getItem('data');
 const data = storedData ? JSON.parse(storedData) : [];
 
-
-
 const storageKelas = localStorage.getItem('kelas');
 const kelas = storageKelas ? JSON.parse(storageKelas) : []
 // console.log(kelas);

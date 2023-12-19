@@ -14,11 +14,14 @@ export function cetakTabel(ell, jenis, datas) {
   ell.innerHTML = datas.map(dt => {
     if(dt.kategori === jenis){
       return ` 
-      <tr>
-      <td>${dt.judul}</td>
-      <td>${dt.harga}</td>
-      <td><i class="fa fa-ellipsis-v cursor-pointer"></i></td>
-      </tr>`
+        <tr>
+          <td>${dt.judul}</td>
+          <td>${dt.harga}</td>
+          <td>
+            <i class="fa fa-ellipsis-v cursor-pointer relative z-10"></i>
+          </td>
+        </tr>
+      `
     }
   }).join('')
 }
