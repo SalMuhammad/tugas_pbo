@@ -37,3 +37,13 @@ header .link .link-aktif{
   background-color: teal;
   color: white;
 }
+
+.box {
+  position: absolute;
+  padding: 2px 4px;
+  top: 0;
+  background-color: white;
+  z-index: 20;
+  border-radius: 4px;
+  border: 1px solid rgb(209 213 219 / 1);
+}

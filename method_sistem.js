@@ -23,16 +23,16 @@ export function buatIdAcak() {
 }
 
 // fungsi menambah kelas
-export function tambahKelas(obj) {
+export function tambahKelas(namaKelas) {
   kelas.push({
-    kls: obj,
+    kls: namaKelas,
     lk: [],
     prm: []
   });
   localStorage.setItem('kelas', JSON.stringify(kelas));
 }
 
-// export 
+
 
 
 

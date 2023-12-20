@@ -2,7 +2,8 @@ import {
   $,
   $all
 } from './method_interaktif.js'
-
+import { tambahKelas } from './method_sistem.js'
+import { kelas } from './pengelolaKItab/database.js'
 
 
 
@@ -41,6 +42,12 @@ if($('#tambah-data')) {
   })
 }
 
+// tambahKelas('d1')
+// tambahKelas('d2')
+// tambahKelas('kls1')
+// tambahKelas('kls2')
+// tambahKelas('kls3')
+console.log(kelas);
 
 
 // class BankAccount {
@@ -58,8 +65,6 @@ if($('#tambah-data')) {
 // const account = new BankAccount();
 // account.deposit(100);
 // console.log(account.getBalance());
-
-
 
 
 

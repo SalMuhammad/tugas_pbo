@@ -17,18 +17,10 @@ const kelas = storageKelas ? JSON.parse(storageKelas) : []
 
 // localStorage.setItem('kelas', JSON.stringify(kelas))
 
-function tambahKitabKelas(idKelas, data, kelamin) {
-  console.log(kelas[idKelas])
-  if(kelamin === 'lk') {
-    kelas[idKelas].lk.push(data)
-    // console.log(kelas[idKelas].lk)
-  } else {
-    kelas[idKelas].prm.push(data)
-    // console.log(kelas[idKelas].prm)
-  }
-  localStorage.setItem('kelas', JSON.stringify(kelas))
-}
-//  tambahKitabKelas(1, {judul:'tilar dunya'}, 'lk')
+
+
+
+//  tambahKitabKelas(4, {judul:'mauta'}, 'lk')
 
 $('#simpan').addEventListener('click', () => {
   data.push({
