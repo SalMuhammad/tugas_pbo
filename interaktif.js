@@ -6,7 +6,6 @@ import { tambahKelas } from './method_sistem.js'
 import { kelas } from './pengelolaKItab/database.js'
 
 
-
 // ----------------------------------------------------------
 // ==================   HALAMAN USER   =======================
 // ----------------------------------------------------------
@@ -47,7 +46,6 @@ if($('#tambah-data')) {
 // tambahKelas('kls1')
 // tambahKelas('kls2')
 // tambahKelas('kls3')
-console.log(kelas);
 
 
 // class BankAccount {

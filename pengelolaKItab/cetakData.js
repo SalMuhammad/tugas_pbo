@@ -31,10 +31,26 @@ $('figure#tabel-kelas div').innerHTML = `
             </div>
             <div class="flex justify-around text-sm">
               <div>
-                ${kls.lk.map(l => `<span class="block">${l.judul}</span>`).join('')}
+                ${kls.lk.map(l => {
+                    return `
+                      <div class="flex gap-2 justify-between item-center p-2 border-r-[1px] border-gray-700">
+                        <span class="block ">${l.judul}</span> 
+                        <l class="fa fa-ellipsis-v cursor-pointer"></l>
+                      </div>
+                    `
+                  }).join('')
+                }
               </div>
               <div>
-                ${kls.prm.map(l => `<span class="block">${l.judul}</span>`).join('')}
+                ${kls.prm.map(l => {
+                    return `
+                      <div class="flex gap-2 justify-between item-center p-2 border-r-[1px] border-gray-700">
+                        <span class="block ">${l.judul}</span> 
+                        <l class="fa fa-ellipsis-v cursor-pointer"></l>
+                      </div>
+                    `
+                  }).join('')
+                }
               </div>
             </div>
           </div>
@@ -43,6 +59,14 @@ $('figure#tabel-kelas div').innerHTML = `
     </div>
   </div>
 `
+Array.from($all('l.fa-ellipsis-v')).forEach( titikTiga => {
+  titikTiga.addEventListener('click', ev => {
+    const ygDiKlik = ev.target.previousElementSibling.textContent
+    const kelasYgDiCek = ev.target.parentElement.parentElement.parentElement.previousElementSibling
+
+    console.log(kelasYgDiCek);
+  })
+});
 
 // menampilkan data kitab ke tabel
 cetakTabel($('#tbody-kitab'), 'kitab', data)
@@ -54,13 +78,12 @@ cetakTabel($('#tbody-nadom'), 'nadom', data)
 cetakTabel($('#tbody-diktat'), 'diktat', data)
 
 
-
 // ketika tombol titik 3 vertikal di klik
 $all('table .fa-ellipsis-v').forEach(el => {
   el.addEventListener('click', e => {
     let id = e.target.nextElementSibling.innerHTML
     // console.log(id);
-    const elemenYgAkanDiSimpan = data.filter(dt => dt.id === id)
+    const elemenYgAkanDiSimpan = data.filter(dt => dt.id === id)[0]
     $('.layer-pilihan').classList.remove('hidden')
     $('#box').className = ''
     $('#box').classList.add(`box`)
@@ -84,33 +107,34 @@ $all('table .fa-ellipsis-v').forEach(el => {
         </li>
       </ul>
     `
-  Array.from($all('.kelas-yg-dipilih')).forEach(klsPilihan => {
+    // system yang memindahkan kitab dari data ke kelas masing-masing ketika pilihannya di klik
+    Array.from($all('.kelas-yg-dipilih')).forEach(klsPilihan => {
       klsPilihan.addEventListener('click', ev => {
         const genderPilihan = ev.target.parentElement.parentElement
+        const kelasPenerima = kelas.filter(kls => kls.kls === ev.target.innerHTML)[0]
         if(genderPilihan.classList.contains('lk')){
-
-          const kelasPenerima = kelas.filter(kls =>    kls.kls === ev.target.innerHTML)
-          const kelasLk = kelasPenerima[0].lk
-          kelasLk.push(elemenYgAkanDiSimpan[0])
+          // cek apakah data kitab sudah ada di lurik yang di tuju
+          if(kelasPenerima.some(kp => kp.id === elemenYgAkanDiSimpan.id)) {
+            alert('ada')
+          }
+          // filter kelas berdasarkan elemen elemen yang di klik
+          const kelasLk = kelasPenerima.lk
+          kelasLk.push(elemenYgAkanDiSimpan)
           localStorage.setItem('kelas', JSON.stringify(kelas))
           alert('data berhasil di tambahkan ke kelas')
           window.location = 'kelolaKitab.html'
-          // console.log(elemenYgAkanDiSimpan);
         } else {
-          console.log('bukan')
+          const kelasLk = kelasPenerima.prm
+          kelasLk.push(elemenYgAkanDiSimpan)
+          localStorage.setItem('kelas', JSON.stringify(kelas))
+          alert('data berhasil di tambahkan ke kelas')
+          window.location = 'kelolaKitab.html'
         }
       })
     })
   })
 })
 
-// console.log(kelas);
-// function tambahkanDataKeKelas(elTarget, klm) {
-//   const kelasPenerima = kelas.filter(kls => kls.kls === elTarget)
-//   const kelamin = (klm === 'kl'? kelasPenerima.lk: kelasPenerima.prm)
-//   console.log(kelasPenerima)
-//   console.log(kelamin)
-// }
 
 $('body').addEventListener('click', e => {
   if(e.target.classList.contains('layer-pilihan')) {
