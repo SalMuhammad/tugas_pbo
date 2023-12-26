@@ -5,7 +5,6 @@ import {
 import { tambahKelas } from './method_sistem.js'
 import { kelas } from './pengelolaKItab/database.js'
 
-
 // ----------------------------------------------------------
 // ==================   HALAMAN USER   =======================
 // ----------------------------------------------------------
@@ -40,6 +39,21 @@ if($('#tambah-data')) {
     $('#layouting').classList.add('hidden')
   })
 }
+
+$('body').addEventListener('click', e => {
+  if(e.target.classList.contains('layer-pilihan') || e.target.classList.contains('layer-pilih')){
+    e.target.classList.add('hidden')
+  }
+})
+ 
+$('#tambah-kelas').addEventListener('click', e => {
+  e.target.nextElementSibling.classList.remove('hidden')
+})
+
+$("#simpan-kelas").addEventListener('click', e => {
+  tambahKelas($("#kelas-baru").value)
+})
+
 
 // tambahKelas('d1')
 // tambahKelas('d2')

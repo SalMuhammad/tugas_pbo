@@ -31,8 +31,3 @@ export function tambahKelas(namaKelas) {
   });
   localStorage.setItem('kelas', JSON.stringify(kelas));
 }
-
-
-
-
-

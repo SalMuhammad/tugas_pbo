@@ -3,7 +3,10 @@ import {
   $all
 } from '../method_interaktif.js'
 
+
+
 import {
+  tambahKelas,
   buatIdAcak
 } from './../method_sistem.js'
 const storedData = localStorage.getItem('data');
@@ -36,4 +39,14 @@ $('#simpan').addEventListener('click', () => {
 
 
 
+// $('#simpan-kelas').addEventListener('click', e => {
+//   console.log(e.target);
+//   tambahKelas($('input#kelas-baru').value)
+// })
 export {data, kelas} 
+
+
+
+
+
+
