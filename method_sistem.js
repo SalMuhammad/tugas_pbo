@@ -1,6 +1,6 @@
 import {
   kelas
-} from './pengelolaKItab/database.js'
+} from './database.js'
 
 // method membuat id
 export function cekKeberadaanId(id) {
@@ -30,4 +30,21 @@ export function tambahKelas(namaKelas) {
     prm: []
   });
   localStorage.setItem('kelas', JSON.stringify(kelas));
+}
+
+
+export function adakahString(username) {
+  const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+  for (const user of storedUsers) {
+    if (user.username === username) {
+      alert('Username sudah ada!');
+      return true; // Username exists
+    }
+  }
+  return false; // Username does not exist
+}
+
+
+export function buatDataLogin () {
+  return (localStorage.userLogin)? localStorage.getItem("userLogin"): localStorage.setItem('userLogin', 'Null')
 }

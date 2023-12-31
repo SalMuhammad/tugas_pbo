@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <script src="https://cdn.tailwindcss.com"></script>
+ <title>registrasi form</title>
+</head>
+<body>
+ <form id="reg" action="" class="w-[30%] mx-auto my-10 rounded-xl p-6 bg-sky-500 capitalize  font-semibold">
+  <h3 class="text-center text-2xl m-3">halaman registrasi</h3>
+  <div>
+    <input class="w-full my-2 p-2 capitalize" type="text" id="username" placeholder="username">
+  </div>    
+  <div>
+    <input class="w-full my-2 p-2 capitalize" type="password" id="password" placeholder="password">
+  </div>   
+  <div>
+    <input class="w-full my-2 p-2 capitalize" type="password" id="consfirPassword" placeholder="konfirmasi password">
+  </div>   
+  <hr>
+  <div>
+    <select class="w-full my-2 p-2 capitalize" name="kategori" id="kategori"> kategori
+      <option>kategory</option>
+      <option value="admin">admin</option>
+      <option value="asrama">asrama</option>
+    </select>
+  </div> 
+  <div>
+    <select class="w-full my-2 p-2 capitalize hidden" name="jenis-kelamin" id="jenis-kelamin"> jenis-kelamin
+      <option>pilih jenis kelamin</option>
+      <option value="laki-laki">laki-laki</option>
+      <option value="perempuan">perempuan</option>
+    </select>
+  </div> 
+  <a href="login.html">sudah punya akun?</a>
+  <button type="button" id="register" class="block border-2 border-white px-3 py-1 rounded-lg mt-4 w-full text-center">submit</button>
+ </form>
+
+ <script type="module">
+  import {
+   $
+  } from './method_interaktif.js'
+  import {
+   adakahString
+  } from './method_sistem.js'
+
+  $('#kategori').addEventListener('change', ()=> {
+    // var jenisKelaminContainer = document.getElementById("jenisKelaminContainer");
+    if ($('#kategori').value === "asrama") {
+      $('#jenis-kelamin').style.display = "block";
+    } else {
+      $('#jenis-kelamin').style.display = "none";
+    }
+  })
+
+
+  // import {buatDataLogin} from './method_sistem.js'
+  // let pemilikLogin = buatDataLogin()
+
+  const registrationForm = document.getElementById("registrationForm");
+  const registerButton = document.getElementById("register");
+  registerButton.addEventListener("click", () => {
+   const username = document.getElementById("username").value;
+   const password = document.getElementById("password").value;
+   const confirmPassword = document.getElementById("consfirPassword").value;
+    // Validate if passwords match
+    if (password !== confirmPassword) {
+      alert("Password dan konfirmasi password tidak cocok.") 
+      return
+    }else if(!adakahString(username)) {
+      registrasiAkun(username, password)
+      alert('registrasi succesfull')
+      // document.location = 'login.html'
+    } 
+    // console.log(localStorage.users)
+   }) 
+ // Function to register a new user
+ function registrasiAkun(username, password) {
+  const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+  let jenisKelamin = ''
+  const newUser = { 
+    username,
+    password,
+    kategori: $('#kategori').value,
+    jenisKelamin:$('#jenis-kelamin').value,
+    pesanan: []
+  }
+  storedUsers.push(newUser);
+  localStorage.setItem("users", JSON.stringify(storedUsers));
+  console.log(localStorage);
+  console.log(newUser);
+ }
+ 
+ </script>
+</body>
+</html>

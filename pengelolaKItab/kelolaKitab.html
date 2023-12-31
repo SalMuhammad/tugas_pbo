@@ -143,13 +143,26 @@
       </div>
     </main>
   </section>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var userLoginData = localStorage.getItem("userLogin");
+  
+      // Memeriksa apakah data userLogin atau adaUserLogin berisi "Null"
+      if (!userLoginData || userLoginData === "Null") {
+        alert('Anda belum login!!')
 
-  <script type="module" src="database.js"></script>
-  <script type="module" src="cetakData.js"></script>
+        // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
+        window.location.href = "../login.html";
+      }
+    // }
+  });
+  </script>  
+  <script type="module" src="../database.js"></script>
+  <script type="module" src="../cetakData.js"></script>
   <script type="module" src="../interaktif.js"></script>
 </body>
 </html>
-
+<!-- 
 <div class="card">
   <figure>
     <div>
@@ -163,4 +176,4 @@
     <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quo temporibus odit, in laborum ea natus consequatur distinctio accusamus ullam tenetur!</p>
   </figure>      
 </div>
-<button id="ambil">kirim</button>
+<button id="ambil">kirim</button> -->

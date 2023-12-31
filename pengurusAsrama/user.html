@@ -28,39 +28,17 @@
     </div>
 
     <!-- yang di tampilkan -->
-    <div id="yg-di-tampilkan" class="p-2">
+    <div id="pilihan-kitab-user" class="p-2">
       <!-- bagian pesanan dari asrama -->
       <div id="pesan-dari-asrama" class="">
-        <div class="my-4">
-          <details>
-            <summary>spa</summary>
-            <div class="flex flex-wrap gap-2 justify-end">
-              <div class="flex justify-between w-[41%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
-                <input type="checkbox">
-                <span class="p-1">kitab</span>
-                <span class="p-1">12000 </span>
-                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
-              </div>
-              <div class="flex justify-between w-[45%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
-                <input type="checkbox">
-                <span class="p-1">kitab</span>
-                <span class="p-1">12000 </span>
-                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
-              </div>
-              <div class="flex justify-between w-[45%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">
-                <input type="checkbox">
-                <span class="p-1">kitab</span>
-                <span class="p-1">12000 </span>
-                <input type="number" value="1" class="w-9 pl-2 pr-0 text-white outline-none bg-green-500 "/>
-              </div>
-            </div>
-          </details>
+        <div class="cetak my-4">
+          
         </div>
         <button id="selanjutnya" class=" fixed bottom-28 left-[50%] -translate-x-[50%] bg-green-600 text-white shadow-xl px-4 py-1 rounded-xl " type="submit">selanjutnya</button>
 
         <!-- bagian rincia pesanan -->
         <div id="rincian-pesanan" class=" absolute top-0 left-0 bottom-0 right-0 bg-gradient-to-tr from-cyan-700 to-blue-300 z-10 hidden">
-          <div class="p-2">
+          <div class="p-2"> 
             <i class="fa fa-arrow-left cursor-pointer" aria-hidden="true"></i>
             <br>
             <figure class=" w-[80%] mx-auto capitalize caret-purple-500">
@@ -107,7 +85,6 @@
       <!-- bagian  -->
     </div>
     
-    
     <footer class="p-2 absolute text-3xl bottom-0 left-0 right-0 border-teal-500 border-t-2 text-sky-600">
       <nav class="flex justify-between">
         <i class="cursor-pointer transition-all duration-500 fa fa-home" aria-hidden="true"></i> 
@@ -117,6 +94,21 @@
       </nav>
     </footer>
   </div>
-  <script type="module" src="../interaktif.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var userLoginData = localStorage.getItem("userLogin"); 
+  
+      // Memeriksa apakah data userLogin atau adaUserLogin berisi "Null"
+      if (!userLoginData || userLoginData === "Null") {
+        alert('Anda belum login!!')
+        // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
+        window.location.href = "../login.html";
+      }
+    // }
+  });
+  </script>  
+  <!-- <script type="module" src="../database.js"></script> -->
+  <script type="module" src="cetakData.js"></script>
+  <!-- <script type="module" src="../interaktif.js"></script> -->
 </body>
 </html>

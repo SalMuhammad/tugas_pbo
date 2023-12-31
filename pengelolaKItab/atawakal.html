@@ -151,6 +151,21 @@
   <footer>
 
   </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var userLoginData = localStorage.getItem("userLogin");
+
+    // Memeriksa apakah data userLogin atau adaUserLogin berisi "Null"
+    if (!userLoginData || userLoginData === "Null") {
+      alert('Anda belum login!!')
+
+      // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
+      window.location.href = "../login.html";
+    }
+  // }
+});
+</script>  
 </body>
 </html>
 

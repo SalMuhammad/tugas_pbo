@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+  <title>halaman login</title>
+</head>
+<body> 
+  <form id="loginForm" action="" class="w-[30%] mx-auto my-10 rounded-xl p-6 bg-sky-500 capitalize font-semibold">
+    <h3 class="text-center text-2xl m-3">halaman login</h3>
+    <div>
+      <input class="w-full my-2 p-2 capitalize" type="text" id="username" placeholder="username">
+    </div>    
+    <div>
+      <input class="w-full my-2 p-2 capitalize" type="password" id="password" placeholder="password">
+    </div>   
+    <a href="register.html">belum punya akun?</a>
+    <button type="submit" class="block border-2 border-white px-3 py-1 rounded-lg mt-4 w-full text-center">submit</button>
+  </form>
+
+<script type="module">
+  import {buatDataLogin} from './method_sistem.js'
+  let pemilikLogin = buatDataLogin()
+
+  console.log(JSON.parse(localStorage.users))
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("loginForm");
+  loginForm.addEventListener("submit", function (event) {
+    event.preventDefault()
+
+    const loginUsername = document.getElementById("username").value;
+    const loginPassword = document.getElementById("password").value;
+    // Memanggil fungsi login
+    login(loginUsername, loginPassword)
+  });
+// });
+
+// Fungsi untuk memproses login
+function login(username, password) {
+  const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+  // Mencari pengguna dengan username yang cocok
+  const user = storedUsers.find((u) => u.username === username)
+
+  if (user && user.password === password) {
+    pemilikLogin = JSON.stringify(user)
+    localStorage.setItem('userLogin', JSON.stringify(pemilikLogin))
+    console.log(localStorage.userLogin)
+    alert("Login berhasil!");
+  } else {
+    alert("Username atau password salah. Silakan coba lagi.");
+  }
+}
+
+</script>
+</body>
+</html>

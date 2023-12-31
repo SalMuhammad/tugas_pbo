@@ -3,8 +3,8 @@ import {
   $all
 } from './method_interaktif.js'
 import { tambahKelas } from './method_sistem.js'
-import { kelas } from './pengelolaKItab/database.js'
-
+// import { kelas } from './database.js'
+import { btnTambahKelas, btnSimpanKelas } from './cetakData.js'
 // ----------------------------------------------------------
 // ==================   HALAMAN USER   =======================
 // ----------------------------------------------------------
@@ -46,20 +46,15 @@ $('body').addEventListener('click', e => {
   }
 })
  
-$('#tambah-kelas').addEventListener('click', e => {
+btnTambahKelas.addEventListener('click', e => {
   e.target.nextElementSibling.classList.remove('hidden')
 })
 
-$("#simpan-kelas").addEventListener('click', e => {
+btnSimpanKelas.addEventListener('click', e => {
   tambahKelas($("#kelas-baru").value)
 })
 
 
-// tambahKelas('d1')
-// tambahKelas('d2')
-// tambahKelas('kls1')
-// tambahKelas('kls2')
-// tambahKelas('kls3')
 
 
 // class BankAccount {
