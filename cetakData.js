@@ -19,11 +19,11 @@ import {
 ------------------------------------------ */
 
 // menampilkan data perkelas kedalam tabel
-if("figure#tabel-kelas div") {
-  $("figure#tabel-kelas div").innerHTML = `
-  <div>
-  <div class="flex">
-  ${kelas.map(kls => {
+if("#tabel-kelas div") {
+  $("#tabel-kelas div").innerHTML = `
+    <div>
+      <div class="flex">
+        ${kelas.map(kls => {
           return `
             <div class"border-r-2 bg">
               <div class="bg-teal-600 text-white">
@@ -79,7 +79,6 @@ if("figure#tabel-kelas div") {
         </div>
       </div>
     </div>`
-    
     Array.from($all('l.fa-ellipsis-v')).forEach( titikTiga => {
       titikTiga.addEventListener('click', ev => {
         const ygDiKlik = ev.target.previousElementSibling.textContent
@@ -95,6 +94,91 @@ if("figure#tabel-kelas div") {
       });
       // console.log(kelas);   
 }
+
+
+
+// console.log($("#tabel-kelas div"));
+
+  // $("#tabel-kelas div").innerHTML = `
+  //   <div>
+  //     <div class="flex">
+  //       ${kelas.map(kls => {
+  //         return `
+  //           <div class"border-r-2 bg">
+  //             <div class="bg-teal-600 text-white">
+  //               <div class="font-bold text-center">${kls.kls} <i class="fa-solid fa-ellipsis"></i>--</div>
+  //               <div class="flex justify-evenly">
+  //                 <div>lk</div>
+  //                 <div>pr</div>
+  //               </div>
+  //             </div>
+  //             <div class="flex justify-around text-sm">
+  //               <div>
+  //                 ${kls.lk.map( l => {
+  //                     return `
+  //                       <div class="flex gap-2 justify-between item-center p-2 border-r-[1px] border-gray-700">
+  //                         <span class="block ">${l.judul}</span> 
+  //                         <l class="fa fa-ellipsis-v cursor-pointer lk"></l>
+  //                       </div>
+  //                     `
+  //                   }).join('')
+  //                 }
+  //               </div>
+  //               <div>
+  //                 ${kls.prm.map( l => {
+  //                     return `
+  //                       <div class="flex gap-2 justify-between item-center p-2 border-r-[1px] border-gray-700">
+  //                         <span class="block ">${l.judul}</span> 
+  //                         <l class="fa fa-ellipsis-v cursor-pointer prm"></l>
+  //                       </div>
+  //                     `
+  //                   }).join('')
+  //                 }
+  //               </div>
+  //             </div>
+  //           </div>
+  //         `
+  //       }).join('')}
+        
+  //       <div class="text-white">
+  //         <button id="tambah-kelas" class="bg-teal-600 hover:bg-teal-700 py-3 px-2 cursor-pointer capitalize">
+  //           tambah kelas
+  //         </button>
+  //         <div class="layer-pilih bg-zinc-900/90 absolute top-0 right-0 bottom-0 left-0 hidden">
+  //           <form class="p-3 py-5 pb-3 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 border-xs border-teal-900/30 rounded-lg border-[1px] capitalize shadow-lg bg-white">
+  //             <input id="kelas-baru" class="bg-gray-500/15 p-1 rounded outline-none px-3 text-teal-700" type="text" required><br>
+  //             <input class="p-1 w-4 h-4" type="checkbox" id="lk">
+  //             <label class="text-gray-900" for="lk">laki-laki</label>
+  //             <input class="p-1 w-4 h-4" type="checkbox" id="pr">
+  //             <label class="text-gray-900" for="pr">perempuan</label> <br>
+
+  //             <button type="submit" id="simpan-kelas" class="inline-block cursor-pointer bg-teal-600 px-3 p-1 rounded mt-3">simpan</button>
+  //           </form>
+  //         </div>
+  //       </div>
+  //     </div>
+  //   </div>`
+  //   Array.from($all('l.fa-ellipsis-v')).forEach( titikTiga => {
+  //     titikTiga.addEventListener('click', ev => {
+  //       const ygDiKlik = ev.target.previousElementSibling.textContent
+  //       const kelasYgDiCek = ev.target.parentElement.parentElement.parentElement.previousElementSibling.children[0].textContent
+  //       const kumpulanKelasDiklik = ev.target.className.split(' ')
+  //       const kelamin = kumpulanKelasDiklik[kumpulanKelasDiklik.length - 1]
+  //       const kelasYgDihapus = kelas.filter(k => k.kls === kelasYgDiCek)[0]
+  //       console.log(kelasYgDihapus.lk);
+  //       // if(kelamin === 'lk') {
+          
+  //         // }
+  //       })
+  //     });
+      // console.log(kelas);   
+
+
+
+
+
+
+
 // menampilkan data kitab ke tabel
 cetakTabel($('#tbody-kitab'), 'kitab', data)
 
@@ -169,10 +253,11 @@ export const btnSimpanKelas = $("#simpan-kelas")
 
 
 
+
 /*------------------------------------------------------
 ======================== halaman user ==================
 -------------------------------------------------------*/
-
+export const selanjutnya  = $('#selanjutnya')
 
 
 

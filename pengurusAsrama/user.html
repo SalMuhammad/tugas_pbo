@@ -43,7 +43,7 @@
           <div class="p-2"> 
             <i class="fa fa-arrow-left cursor-pointer" aria-hidden="true"></i>
             <br>
-            <figure class=" w-[80%] mx-auto capitalize caret-purple-500">
+            <figure class="w-[80%] mx-auto capitalize caret-purple-500">
               <figcaption class="text-center">daftar pesanan anda</figcaption>
               <table class="tabel w-full">
                 <tr>
@@ -102,11 +102,22 @@
       cekLogin,
       logOut
     } from './../method_sistem.js'
-
     $('.bi-box-arrow-right').onclick = logOut
-
     cekLogin()
-  </script>  
+
+    // export const   = $('#yg-di-tampilkan')
+
+
+    
+    $('#selanjutnya').addEventListener('click', () => {
+      $('#rincian-pesanan').classList.remove('hidden')
+    })
+    
+    $('.fa-arrow-left').addEventListener('click', ()=> {
+      $('#rincian-pesanan').classList.add('hidden')
+    })
+
+  </script> 
   <!-- <script type="module" src="../database.js"></script> -->
   <script type="module" src="cetakData.js"></script>
   <!-- <script type="module" src="../interaktif.js"></script> -->
