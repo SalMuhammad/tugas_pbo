@@ -32,7 +32,6 @@ export function tambahKelas(namaKelas) {
   localStorage.setItem('kelas', JSON.stringify(kelas));
 }
 
-
 export function adakahString(username) {
   const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
   for (const user of storedUsers) {
@@ -44,7 +43,27 @@ export function adakahString(username) {
   return false; // Username does not exist
 }
 
-
 export function buatDataLogin () {
-  return (localStorage.userLogin)? localStorage.getItem("userLogin"): localStorage.setItem('userLogin', 'Null')
+  return (localStorage.pemilikLogin)? localStorage.getItem("pemilikLogin"): localStorage.setItem('pemilikLogin', 'Null')
+}
+
+export function cekLogin() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var pemilikLoginData = localStorage.getItem("pemilikLogin");
+
+    // Memeriksa apakah data pemilikLogin atau adapemilikLogin berisi "Null"
+    if (!pemilikLoginData || pemilikLoginData === "Null") {
+      alert('Anda belum login!!')
+
+      // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
+      window.location.href = "../login.html";
+    }
+  // }
+});
+}
+
+export function logOut() {
+  alert('anda dudah log out')
+  localStorage.setItem('pemilikLogin', "Null")
+  window.location.href = "../login.html"
 }

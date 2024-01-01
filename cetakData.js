@@ -8,8 +8,11 @@ import {
   $all
 } from './method_interaktif.js'
 // import {
-//   tambahKelas
+//   cekLogin
 // } from './../method_sistem.js'
+
+
+
 
 /* ---------------------------------------
 ========= halaman kelola kitab ===========

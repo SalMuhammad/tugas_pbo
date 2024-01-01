@@ -2,9 +2,12 @@ import {
   $,
   $all
 } from './method_interaktif.js'
-import { tambahKelas } from './method_sistem.js'
+import { tambahKelas} from './method_sistem.js'
 // import { kelas } from './database.js'
 import { btnTambahKelas, btnSimpanKelas } from './cetakData.js'
+
+
+
 // ----------------------------------------------------------
 // ==================   HALAMAN USER   =======================
 // ----------------------------------------------------------
@@ -45,7 +48,7 @@ $('body').addEventListener('click', e => {
     e.target.classList.add('hidden')
   }
 })
- 
+
 btnTambahKelas.addEventListener('click', e => {
   e.target.nextElementSibling.classList.remove('hidden')
 })
@@ -53,7 +56,6 @@ btnTambahKelas.addEventListener('click', e => {
 btnSimpanKelas.addEventListener('click', e => {
   tambahKelas($("#kelas-baru").value)
 })
-
 
 
 

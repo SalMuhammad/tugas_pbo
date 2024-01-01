@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="user.css">
@@ -22,8 +23,9 @@
     </nav>
 
     <div class="p-2 bg-green-600 text-white">
-      <header class="p-1 ">
+      <header class="p-1 flex justify-between">
         <a href="">bagian nav bar</a>
+        <span class="pengaturan"><i class="bi bi-box-arrow-right cursor-pointer"></i></span>
       </header>
     </div>
 
@@ -94,18 +96,16 @@
       </nav>
     </footer>
   </div>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      var userLoginData = localStorage.getItem("userLogin"); 
-  
-      // Memeriksa apakah data userLogin atau adaUserLogin berisi "Null"
-      if (!userLoginData || userLoginData === "Null") {
-        alert('Anda belum login!!')
-        // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
-        window.location.href = "../login.html";
-      }
-    // }
-  });
+  <script type="module">
+    import {$} from './../method_interaktif.js'
+    import {
+      cekLogin,
+      logOut
+    } from './../method_sistem.js'
+
+    $('.bi-box-arrow-right').onclick = logOut
+
+    cekLogin()
   </script>  
   <!-- <script type="module" src="../database.js"></script> -->
   <script type="module" src="cetakData.js"></script>

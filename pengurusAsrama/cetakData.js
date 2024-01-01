@@ -7,17 +7,18 @@ import {
  kelas
 } from '../database.js'
 
-let user = 'lak'
+let pemilikLogin = JSON.parse(localStorage.getItem("pemilikLogin"))
+// console.log()
 
-// console.log(kelas)
+
 
 const el = kelas.map(kls => {
- console.log(kls);
+//  console.log(kls);
  return `
  <details>
   <summary>${kls.kls}</summary>
    <div class="flex flex-wrap gap-2 justify-end">
-    ${ (user === 'laki'? 
+    ${ (pemilikLogin.jenisKelamin === 'laki-laki'? 
       kls.lk.map(l => {
        return `
        <div class="flex justify-between w-[41%] bg-green-200 border-2 border-green-500 rounded-lg pl-2">

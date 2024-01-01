@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="../style.css">
   <title>pengelola kitab</title>
@@ -13,7 +14,7 @@
   <div class="mx-auto w-[95%]">
     <div class="flex text-sm w-2 text-white justify-between">
       <a href="../pengelolaKItab/atawakal.html" class="px-3 bg-slate-900">admin</a>
-      <a href="../pnegurusAsrama/user.html" class="px-3 ">user</a>
+      <a href="../pengurusAsrama/user.html" class="px-3 ">user</a>
     </div>
   </div>
 </nav>
@@ -36,7 +37,8 @@
             <a href="history.html">history</a>
           </ul>
         </nav>
-        <span class="pengaturan"><i class="fa fa-th-list" aria-hidden="true"></i></span>
+        <!-- <span class="pengaturan"><i class="fa fa-th-list" aria-hidden="true"></i></span> -->
+        <span class="pengaturan"><i class="bi bi-box-arrow-right cursor-pointer"></i></span>
       </div>
     </div>
   </header>
@@ -145,27 +147,23 @@
       </div>
     </div>
   </main>
-
+ 
 </div>
 
   <footer>
 
   </footer>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    var userLoginData = localStorage.getItem("userLogin");
+<script type="module">
+import {$} from './../method_interaktif.js'
+import {cekLogin, logOut} from './../method_sistem.js'
 
-    // Memeriksa apakah data userLogin atau adaUserLogin berisi "Null"
-    if (!userLoginData || userLoginData === "Null") {
-      alert('Anda belum login!!')
 
-      // Redirect atau lakukan tindakan lain seperti menampilkan pesan dan mengarahkan ke halaman login
-      window.location.href = "../login.html";
-    }
-  // }
-});
+$('.bi-box-arrow-right').onclick = logOut
+
+cekLogin()
 </script>  
+<!-- <script type="module" src="../interaktif.js"></script> -->
 </body>
 </html>
 

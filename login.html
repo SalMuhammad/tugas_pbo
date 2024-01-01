@@ -24,7 +24,7 @@
   import {buatDataLogin} from './method_sistem.js'
   let pemilikLogin = buatDataLogin()
 
-  console.log(JSON.parse(localStorage.users))
+  // console.log(JSON.parse(localStorage.users))
 
   // document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("loginForm");
@@ -43,13 +43,16 @@ function login(username, password) {
   const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
   // Mencari pengguna dengan username yang cocok
   const user = storedUsers.find((u) => u.username === username)
-
   if (user && user.password === password) {
-    pemilikLogin = JSON.stringify(user)
-    localStorage.setItem('userLogin', JSON.stringify(pemilikLogin))
-    console.log(localStorage.userLogin)
+    localStorage.setItem('pemilikLogin', JSON.stringify(user))
     alert("Login berhasil!");
-  } else {
+    if(user.kategori === 'admin' ) {
+      window.location.href = "pengelolaKitab/atawakal.html"
+     } else {
+       window.location.href = "pengurusAsrama/user.html"
+     }
+    }
+  else {
     alert("Username atau password salah. Silakan coba lagi.");
   }
 }
