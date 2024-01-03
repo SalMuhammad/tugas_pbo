@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../style.css">
   <title>pengelola kitab</title>
 </head> 
-<body class="h-[1000px]">
+<body>
 <nav class="bg-slate-500 capitalize">
   <div class="mx-auto w-[95%]">
     <div class="flex text-sm w-2 text-white justify-between">
@@ -72,7 +72,6 @@
                 <th>total <br> harga</th>
                 <th>jml<br>pesanan</th>
                 <th>total <br> harga</th>
-               
               </tr>
             </thead>
             <tbody>
@@ -143,6 +142,19 @@
               </tr>
             </tbody>
           </table>
+
+
+          <div class="flex">
+            <table>
+              <tr>
+                <th>stok</th>
+                <th>judul</th>
+                <th>harga</th>
+              </tr>
+              <tbody id="anu-pesen"></tbody>
+            </table>
+              <div id="tabel-pesanan"></div>
+          </div>
         </div>
       </div>
     </div>
@@ -161,9 +173,10 @@ import {cekLogin, logOut} from './../method_sistem.js'
 
 $('.bi-box-arrow-right').onclick = logOut
 
+
 cekLogin()
 </script>  
-<!-- <script type="module" src="../interaktif.js"></script> -->
+<script type="module" src="cetakData.js"></script>
 </body>
 </html>
 

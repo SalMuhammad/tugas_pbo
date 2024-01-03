@@ -34,7 +34,7 @@
       <!-- bagian pesanan dari asrama -->
       <div id="pesan-dari-asrama" class="">
         <div class="cetak my-4">
-          
+           
         </div>
         <button id="selanjutnya" class=" fixed bottom-28 left-[50%] -translate-x-[50%] bg-green-600 text-white shadow-xl px-4 py-1 rounded-xl " type="submit">selanjutnya</button>
 
@@ -52,27 +52,12 @@
                   <th>jumlah</th>
                   <th>total</th>
                 </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
-                <tr>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                </tr>
+                <tbody id="lihat-pesanan">
+
+                </tbody>
               </table>
             </figure>
-            <button class="fixed bottom-36 left-[50%] -translate-x-[50%] bg-teal-600 text-white shadow-xl px-4 py-1 rounded-xl border-2 border-gray-400" type="submit">pesan sekarang</button>
+            <button id="pesan-sekarang" class="fixed bottom-36 left-[50%] -translate-x-[50%] bg-teal-600 text-white shadow-xl px-4 py-1 rounded-xl border-2 border-gray-400" type="submit">pesan sekarang</button>
 
             <!-- pilih metode pesanan -->
             <section>
@@ -97,25 +82,16 @@
     </footer>
   </div>
   <script type="module">
-    import {$} from './../method_interaktif.js'
     import {
-      cekLogin,
-      logOut
-    } from './../method_sistem.js'
-    $('.bi-box-arrow-right').onclick = logOut
-    cekLogin()
+ $,
+} from '../method_interaktif.js'
+    import {
+    cekLogin,
+    logOut
+  } from './../method_sistem.js'
 
-    // export const   = $('#yg-di-tampilkan')
-
-
-    
-    $('#selanjutnya').addEventListener('click', () => {
-      $('#rincian-pesanan').classList.remove('hidden')
-    })
-    
-    $('.fa-arrow-left').addEventListener('click', ()=> {
-      $('#rincian-pesanan').classList.add('hidden')
-    })
+  $('.bi-box-arrow-right').onclick = logOut
+  cekLogin()
 
   </script> 
   <!-- <script type="module" src="../database.js"></script> -->

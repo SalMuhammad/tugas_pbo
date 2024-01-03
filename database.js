@@ -14,6 +14,11 @@ const data = storedData ? JSON.parse(storedData) : [];
 
 const storageKelas = localStorage.getItem('kelas');
 const kelas = storageKelas ? JSON.parse(storageKelas) : []
+
+const storangeDaftarPesanan = localStorage.getItem('daftar-pesanan');
+const daftarPeanan = storangeDaftarPesanan ? JSON.parse(storangeDaftarPesanan) : []
+
+
 // console.log(kelas);
 // kelas[1] .prm.pop()
 // kelas[1].prm.pop()
@@ -35,7 +40,7 @@ if($("#simpan")){
   });
 }
 
-export {data, kelas}  
+export {data, kelas, daftarPeanan}  
 
 
 
